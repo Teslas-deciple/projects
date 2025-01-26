@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="y.css">
+  <title>Zencron</title>
+  <script src="https://accounts.google.com/gsi/client" async defer></script>
+  <script src="https://alcdn.msauth.net/browser/2.14.2/js/msal-browser.min.js"></script>
+  <script>
+    function showSignIn() {
+      document.getElementById('signin-container').style.display = 'block';
+      document.getElementById('signup-container').style.display = 'none';
+    }
+
+    function showSignUp() {
+      document.getElementById('signin-container').style.display = 'none';
+      document.getElementById('signup-container').style.display = 'block';
+    }
+
+    function handleCredentialResponse(response) {
+      console.log("Encoded JWT ID token: " + response.credential);
+      // Send the ID token to your server for validation.
+      fetch('/auth/google', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ idToken: response.credential })
+      }).then(res => res.json())
+        .then(data => {
+          console.log("Server Response:", data);
+          if (data.success) {
+            window.location.href = 'next-page.html';
+          }
+        })
+        .catch(error => console.error('Error:', error));
+    }
+
+    const msalConfig = {
+      auth: {
+        clientId: "78de7bbe-88a6-416b-826c-af0f52a34670",
+        authority: "https://login.microsoftonline.com/f8cdef31-a31e-4b4a-93e4-5f571e91255a",
+        redirectUri: "https://superlative-kheer-efbf76.netlify.app/auth/microsoft/callback",
+      }
+    };
+
+    const msalInstance = new msal.PublicClientApplication(msalConfig);
+
+    function signInWithMicrosoft() {
+      msalInstance.loginPopup().then(response => {
+        console.log(response);
+        // Send the token to your server for validation.
+        fetch('/auth/microsoft', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ token: response.idToken })
+        }).then(res => res.json())
+          .then(data => {
+            console.log("Server Response:", data);
+            if (data.success) {
+              window.location.href = 'next-page.html';
+            }
+          })
+          .catch(error => console.error('Error:', error));
+      }).catch(error => {
+        console.error(error);
+      });
+    }
+  </script>
+</head>
+<body>
+<center>
+  <header>
+    <h1>Welcome to Zencron</h1>
+  </header>
+  
+  <!-- Sign In Container -->
+  <div class="container" id="signin-container">
+    <div class="title">Sign In</div>
+    <form class="form" action="/submit_signin" method="post">
+      <input type="text" class="input" name="username" placeholder="Username" required>
+      <input type="password" class="input" name="password" placeholder="Password" required>
+      <button type="submit" class="button">Sign In</button>
+    </form>
+    <span class="text" style="font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;">New one?</span>
+    <a class="link" onclick="showSignUp()">Sign up</a>
+  </div>
+  
+  <!-- Sign Up Container -->
+  <div class="container" id="signup-container" style="display: none;">
+    <div class="title">Sign Up</div>
+    <form class="form" action="/submit_signup" method="post">
+      <input type="text" class="input" name="username" placeholder="Username" required>
+      <input type="email" class="input" name="email" placeholder="Email" required>
+      <input type="password" class="input" name="password" placeholder="Password" required>
+      <button type="submit" class="button">Sign Up</button>
+    </form>
+    <a class="link" onclick="showSignIn()">Sign In</a>
+    <div class="g_id_signin" data-type="standard"></div>
+    <div id="g_id_onload"
+         data-client_id="975991739081-qb8blqqf8otf1u32hjcs68nlra8fg4tf.apps.googleusercontent.com"
+         data-login_uri="https://superlative-kheer-efbf76.netlify.app/auth/google/callback"
+         data-your_own_param_1_to_login="any_value"
+         data-your_own_param_2_to_login="any_value">
+    </div>
+         
+         <button class="microsoftbtn" onclick="signInWithMicrosoft()">
+           <svg class="nsvg" width="20px" height="20px" viewBox="0 0 1024 1024"  fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M44.522 44.5217H489.739V489.739H44.522V44.5217Z" fill="#F35325"/>
+              <path d="M534.261 44.5217H979.478V489.739H534.261V44.5217Z" fill="#81BC06"/>
+              <path d="M44.522 534.261H489.739V979.478H44.522V534.261Z" fill="#05A6F0"/>
+              <path d="M534.261 534.261H979.478V979.478H534.261V534.261Z" fill="#FFBA08"/>
+           </svg> 
+             <span>SigninwithMicrosoft</span>
+          </button>
+    </div>
+  </div>
+  
+</center>
+</body>
+</html>
