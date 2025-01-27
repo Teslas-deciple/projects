@@ -99,7 +99,7 @@ address {
 }
 
 .g_id_signin {
-    width: 350px !important; /* Set the desired width */
+    width: 500px !important; /* Set the desired width */
     height: 50px !important;  /* Set the desired height */
     display: flex;
     justify-content: center;
