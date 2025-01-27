@@ -117,6 +117,12 @@ address {
   background-color: white;
   color: black;
   border: none;
-  border
-  padding: 10px;
+  padding: 10px 105px;
+  margin-top: 10px;
+  font-size: 14px; 
+  border-radius: 1px; 
+  cursor: pointer; 
+  font-family: 'Segoe UI', Arial, sans-serif; 
+  box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2); 
+  transition: background-color 0.3s ease;
 }
