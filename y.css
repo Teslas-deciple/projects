@@ -1,111 +1,108 @@
-    body {
-      font-family: Arial, sans-serif;
-      margin:0;
-      padding:0;
-      background-color:#fff;
-    }
-    header, footer {
-      color:rgb(10, 15, 82);
-      text-align:center;
-      padding: 1em 0;
-      padding-left: 1cm;
-    }
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #fff;
+}
 
-    main {
-      padding: 5em;
-    }
-    .container {
-      width: 80%;
-      margin: 0 auto;
-    }
-    @media (max-width: 768px) {
-      .container {
-        width: 90%;
-      }
-    }
-    @media (max-width: 480px) {
-      .container {
-        width: 95%;
-      }
-    }
-  address {
-    font-family: Arial;
-    margin: 0;
-    padding: 0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 80vh;
-    background-color: #fff;
-  }
+header, footer {
+  color: rgb(10, 15, 82);
+  text-align: center;
+  padding: 1em 0;
+  padding-left: 1cm;
+}
+
+main {
+  padding: 5em;
+}
+
+.container {
+  width: 80%;
+  margin: 0 auto;
+}
+
+@media (max-width: 768px) {
   .container {
-    background-color: #fff;
-    padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    width: 350px;
-    text-align: center;
+    width: 90%;
   }
-  .title {
-    font-size: 24px;
-    margin-bottom: 20px;
-  }
-  .form {
-    display: flex;
-    flex-direction: column;
-  }
-  .input {
-    margin-bottom: 10px;
-    padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 6px;
-    font-size: 16px;
-  }
-  
-  .button {
-    padding: 12px 106px;
-    border: none;
-    border-radius: 10px;
-    background-color: #007bff;
-    color: white;
-    font-size: 16px;
-    cursor: pointer;
-  }
-  .button:hover {
-    background-color: #0056b3;
-  }
-  .link {
-    margin-top: 10px;
-    font-size: 13px;
-    color: #007bff;
-    cursor: pointer;
-    text-decoration: none;
-  }
-  .link:hover {
-    text-decoration: underline;
-    size: 1px;
-  }
+}
 
-  .microsoftbtn{
-      display: inline-flex;
-      align-items: center;
-      background-color:white;
-      color:black;
-      border: none;
-      padding: 10px 105px;
-      margin-top: 10px;
-      font-size: 14px;
-      border-radius: 1px;
-      cursor: pointer;
-      font-family: 'Segoe UI', Arial, sans-serif;
-      box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2);
-      transition: background-color 0.3s ease;
-
+@media (max-width: 480px) {
+  .container {
+    width: 95%;
   }
-   .nsvg{
-        margin: left 500px;
-      }
+}
 
-  .microsoftbtn:hover{
-    text-decoration: #007bff;
-  }
+address {
+  font-family: Arial;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 80vh;
+  background-color: #fff;
+}
+
+.container {
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  width: 350px;
+  text-align: center;
+}
+
+.title {
+  font-size: 24px;
+  margin-bottom: 20px;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+}
+
+.input {
+  margin-bottom: 10px;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 16px;
+}
+
+.button {
+  padding: 12px 106px;
+  border: none;
+  border-radius: 10px;
+  background-color: #007bff;
+  color: white;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.button:hover {
+  background-color: #0056b3;
+}
+
+.link {
+  margin-top: 10px;
+  font-size: 13px;
+  color: #007bff;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.link:hover {
+  text-decoration: underline;
+  size: 1px;
+}
+
+.microsoftbtn {
+  display: inline-flex;
+  align-items: center;
+  background-color: white;
+  color: black;
+  border: none;
+  padding: 10px;
+}
