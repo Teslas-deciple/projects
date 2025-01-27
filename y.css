@@ -15,7 +15,7 @@
       padding: 5em;
     }
     .container {
-      width: 80%;
+      width: 100%;
       margin: 0 auto;
     }
     @media (max-width: 768px) {
@@ -63,7 +63,7 @@
   }
   
   .button {
-    padding: 12px 106px;
+    padding: 12px 200px;
     border: none;
     border-radius: 10px;
     background-color: #007bff;
