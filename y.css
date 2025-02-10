@@ -97,6 +97,17 @@ address {
   text-decoration: underline;
   size: 1px;
 }
+
+.g_id_signin {
+    padding: 10px 95px;
+    justify-content: center;
+    align-items: center;
+}
+
+#g_id_onload {
+    display: inline-flex;
+    margin-top: 10px;
+}
 .microsoftbtn {
   display: inline-flex;
   align-items: center;
