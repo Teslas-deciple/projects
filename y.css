@@ -97,12 +97,6 @@ address {
   text-decoration: underline;
   size: 1px;
 }
-
-#g_id_onload {
-    display: inline-block;
-    margin-top: 10px;
-}
-
 .microsoftbtn {
   display: inline-flex;
   align-items: center;
