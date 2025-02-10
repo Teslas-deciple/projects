@@ -98,14 +98,6 @@ address {
   size: 1px;
 }
 
-.g_id_signin {
-    width: 240px !important; /* Set the desired width */
-    height: 50px !important;  /* Set the desired height */
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
 #g_id_onload {
     display: inline-block;
     margin-top: 10px;
