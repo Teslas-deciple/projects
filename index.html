@@ -8,6 +8,20 @@
   <script src="https://accounts.google.com/gsi/client" async defer></script>
   <script src="https://alcdn.msauth.net/browser/2.14.2/js/msal-browser.min.js"></script>
   <script>
+  let token = getAccessToken();
+
+  fetch("https://your-backend.com/verify?token=" + token)
+    .then(response => response.json())
+    .then(user => {
+      if (user.isNewUser) {
+        window.location.href = "https://lustrous-tulumba-258816.netlify.app//signup-completion";
+      } else {
+        window.location.href = "https://lustrous-tulumba-258816.netlify.app/";
+      }
+    })
+    .catch(error => console.error("Verification error:", error));
+</script>
+  <script>
     function showSignIn() {
       document.getElementById('signin-container').style.display = 'block';
       document.getElementById('signup-container').style.display = 'none';
@@ -29,7 +43,7 @@
         .then(data => {
           console.log("Server Response:", data);
           if (data.success) {
-            window.location.href = 'next-page.html';
+            window.location.href = 'https://lustrous-tulumba-258816.netlify.app/';
           }
         })
         .catch(error => console.error('Error:', error));
@@ -57,7 +71,7 @@
           .then(data => {
             console.log("Server Response:", data);
             if (data.success) {
-              window.location.href = 'next-page.html';
+              window.location.href = 'https://lustrous-tulumba-258816.netlify.app/';
             }
           })
           .catch(error => console.error('Error:', error));
